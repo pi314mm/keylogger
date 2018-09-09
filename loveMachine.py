@@ -12,8 +12,7 @@ import sys
 
 try:
         buffer = 1000
-        startS = os.path.expanduser("~")+"\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\start.bat"
-
+        
         args = "\""+os.getcwd()+"\\loveMachine.exe\""
         if len(sys.argv) == 2:
                 args = "\""+sys.argv[1] +"\" "+ args
